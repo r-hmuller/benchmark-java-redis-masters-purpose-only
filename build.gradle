@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id "application"
+}
+
+apply plugin : "java"
+
+group 'dev.rodrigomuller'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'redis.clients', name: 'jedis', version: '3.3.0'
+    compile group: 'com.github.javafaker', name: 'javafaker', version: '1.0.2'
+}
+
+ext {
+    javaMainClass = "Starter"
+}
+
+application {
+    mainClassName = javaMainClass
+}
